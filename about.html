@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О мастере — Тайна Арканов</title>
+  <meta name="description" content="Узнайте больше о практикующем тарологе. Запишитесь на персональную консультацию по Таро.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" data-content="siteName">Тайна <span>Арканов</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="index.html#spreads">Расклады</a>
+        <a href="about.html" class="active">О мастере</a>
+        <a href="#contact">Консультация</a>
+      </nav>
+      <button class="burger" onclick="toggleMenu()" aria-label="Меню">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 3rem;">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 data-content="aboutTitle">О мастере</h2>
+          <div data-content="aboutText">
+            <p>Меня зовут Анна, и я практикующий таролог с более чем 8-летним опытом. Я помогаю людям разобраться в сложных жизненных ситуациях, найти внутреннюю опору и увидеть скрытые возможности.</p>
+            <p>Мой подход — это сочетание классической школы Таро и бережного, поддерживающего общения. Каждый расклад для меня — это диалог с вашей душой.</p>
+          </div>
+          <p style="margin-top: 1.5rem; color: var(--gold-soft);">
+            Telegram: <span data-content="contactTelegram">@your_telegram</span><br>
+            Email: <span data-content="contactEmail">tarot@example.com</span>
+          </p>
+        </div>
+
+        <div class="contact-form" id="contact">
+          <h3>Запись на консультацию</h3>
+          <form id="consult-form" onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" name="name" required placeholder="Как к вам обращаться?">
+            </div>
+            <div class="form-group">
+              <label for="contact">Telegram или WhatsApp</label>
+              <input type="text" id="contact" name="contact" required placeholder="@username или номер">
+            </div>
+            <div class="form-group">
+              <label for="topic">Тема консультации</label>
+              <select id="topic" name="topic">
+                <option value="love">Отношения и любовь</option>
+                <option value="career">Карьера и деньги</option>
+                <option value="self">Личный рост</option>
+                <option value="situation">Конкретная ситуация</option>
+                <option value="other">Другое</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Кратко о вопросе</label>
+              <textarea id="message" name="message" placeholder="Опишите ситуацию (по желанию)"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку</button>
+          </form>
+          <p id="form-success" style="display: none; margin-top: 1rem; color: #86efac; text-align: center;">
+            Спасибо! Я свяжусь с вами в ближайшее время.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span data-content="siteName">Тайна Арканов</span>. Все права защищены.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+      <a href="admin.html">Админка</a>
+    </p>
+  </footer>
+
+  <script src="js/tarot-data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function submitForm(e) {
+      e.preventDefault();
+      // В реальном проекте здесь Formspree / Telegram Bot / email
+      // Сейчас просто показываем сообщение
+      document.getElementById("consult-form").style.display = "none";
+      document.getElementById("form-success").style.display = "block";
+    }
+  </script>
+</body>
+</html>

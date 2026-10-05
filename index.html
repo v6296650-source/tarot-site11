@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тайна Арканов — Онлайн расклады Таро</title>
+  <meta name="description" content="Бесплатные онлайн расклады Таро. Узнайте прошлое, настоящее и будущее. Толкование Старших Арканов. Запись на персональную консультацию.">
+  <meta name="keywords" content="таро, расклад таро, онлайн таро, гадание, арканы, кельтский крест, значение карт таро">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://your-domain.com/">
+  <meta property="og:title" content="Тайна Арканов — Онлайн расклады Таро">
+  <meta property="og:description" content="Бесплатные онлайн расклады Таро. Древняя мудрость в современном формате.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" data-content="siteName">Тайна <span>Арканов</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="index.html" class="active">Главная</a>
+        <a href="#spreads">Расклады</a>
+        <a href="about.html">О мастере</a>
+        <a href="about.html#contact">Консультация</a>
+      </nav>
+      <button class="burger" onclick="toggleMenu()" aria-label="Меню">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-badge">✦ Древняя мудрость ✦</div>
+      <h1 data-content="heroTitle">Откройте тайны будущего</h1>
+      <p data-content="heroSubtitle">Древняя мудрость Таро поможет найти ответы на важные вопросы. Сделайте расклад прямо сейчас.</p>
+      <a href="#spreads" class="btn btn-primary">Сделать расклад</a>
+    </section>
+
+    <!-- Расклады -->
+    <section class="section" id="spreads">
+      <h2 class="section-title">Выберите расклад</h2>
+      <p class="section-subtitle">Сфокусируйтесь на своём вопросе и выберите подходящий расклад</p>
+
+      <div class="spreads-grid">
+        <div class="spread-card" data-spread="three" onclick="selectSpread('three')">
+          <div class="icon">🔮</div>
+          <h3>Три карты</h3>
+          <p>Прошлое — Настоящее — Будущее. Классический и понятный расклад.</p>
+        </div>
+        <div class="spread-card" data-spread="yesno" onclick="selectSpread('yesno')">
+          <div class="icon">☯️</div>
+          <h3>Да / Нет</h3>
+          <p>Быстрый ответ на конкретный вопрос. Одна карта.</p>
+        </div>
+        <div class="spread-card" data-spread="celtic" onclick="selectSpread('celtic')">
+          <div class="icon">✝️</div>
+          <h3>Кельтский крест</h3>
+          <p>Глубокий анализ ситуации. 6 карт (упрощённая версия).</p>
+        </div>
+      </div>
+
+      <!-- Область расклада -->
+      <div class="reading-area" id="reading-area">
+        <h2 class="section-title" id="spread-title">Расклад</h2>
+        <p class="section-subtitle" id="spread-desc"></p>
+
+        <div class="question-box">
+          <input type="text" id="question-input" placeholder="Ваш вопрос (необязательно)..." maxlength="200">
+        </div>
+
+        <button class="btn btn-primary" onclick="drawCards()">
+          Перемешать и вытянуть карты
+        </button>
+
+        <div class="cards-row" id="cards-row"></div>
+        <div class="interpretation" id="interpretation"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span data-content="siteName">Тайна Арканов</span>. Все права защищены.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+      <a href="admin.html">Админка</a>
+    </p>
+  </footer>
+
+  <script src="js/tarot-data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
